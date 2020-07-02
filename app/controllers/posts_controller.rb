@@ -17,7 +17,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new(author_id: params[:author_id])
+    if params[:author_id] && !Author.exists?(params[:author_id])
+  redirect_to authors_path, alert: "Author not found."
+else
+  @post = Post.new(author_id: params[:author_id])
+end
   end
 
   def create
@@ -41,7 +45,7 @@ class PostsController < ApplicationController
     else
       @post = author.posts.find_by(id: params[:id])
       redirect_to author_posts_path(author), alert: "Post not found." if @post.nil?
-      #here we are finding the post associated to author 
+      #here we are finding the post associated to author
     end
     else
       @post = Post.find(params[:id])
