@@ -3975,3 +3975,43 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 76.90.53.66 at 2020-07-02 21:06:56 +0000
+Cannot render console from 76.90.53.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 18ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors" for 76.90.53.66 at 2020-07-02 21:07:19 +0000
+Cannot render console from 76.90.53.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 640ms (Views: 633.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authors/4" for 76.90.53.66 at 2020-07-02 21:07:24 +0000
+Cannot render console from 76.90.53.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 4]]
+  Rendered authors/show.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 68ms (Views: 61.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/authors/4/posts/new" for 76.90.53.66 at 2020-07-02 21:07:29 +0000
+Cannot render console from 76.90.53.66! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"4"}
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (31.2ms)
+  Rendered posts/new.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 69ms (Views: 67.7ms | ActiveRecord: 0.0ms)
+
+
