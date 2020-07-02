@@ -3,6 +3,7 @@
 
   <% if @post.author.nil? %>
   <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %><br>
+  <%#= above gives us a select control if we don't have an author %>
   <% end %>
 
   <%= f.hidden_field :author_id %>
