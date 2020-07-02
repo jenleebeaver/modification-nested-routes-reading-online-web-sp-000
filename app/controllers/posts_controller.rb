@@ -41,9 +41,9 @@ class PostsController < ApplicationController
       @post = author.posts.find_by(id: params[:id])
       redirect_to author_posts_path(author), alert: "Post not found." if @post.nil?
     end
-else
-  @post = Post.find(params[:id])
-end
+    else
+      @post = Post.find(params[:id])
+    end
   end
 
   private
